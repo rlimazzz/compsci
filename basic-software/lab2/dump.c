@@ -2,24 +2,16 @@
 
 #include <stdio.h>
 
-int conversao(int num, int bas) {
-	char conv[500];
-	int i = 0;
-	while(num / bas >= 1) {
-		if(num / bas > 1) {
-			conv[0] = 
-		}
-	}
-}
-
 
 int string2num(char *s) {
 
   int a = 0;
 
   for ( ; *s; s++)
-
+  {
     a = a*10 + (*s - '0');
+    printf("%d\n", a);
+  }
 
   return a;
 
@@ -28,9 +20,11 @@ int string2num(char *s) {
 
 int main () {
 
-  printf("==> %d\n", string2num("777"));
-  printf("==> %d\n", string2num("777"));
-  printf("==> %d\n", string2num("777"));
+  printf("==> %d\n", string2num("1234"));
+
+  // printf("==> %d\n", string2num("1234") + 1);
+
+  // printf("==> %d\n", string2num("1234") + string2num("1"));
 
   return 0;
 
