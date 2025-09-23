@@ -76,6 +76,15 @@ aux:
     movl ui, %r8d
     movq %r8, ul
 
+    #us = ul
+    mov ul, %rax
+    movw %ax, us
+
+    #c = i + j
+    movl i, %eax
+    addl j, %eax
+    movb %eax, c
+
     leave
 
     ret
