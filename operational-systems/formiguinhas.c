@@ -4,12 +4,11 @@
 
 int main(int argc, char *argv[]) {
     
-    int N; // n (número de formigas e blocos)
-    double a = 1.0; // Lado 'a' (base da planificação)
+    int N; 
+    double a = 1.0; 
     double dist_total;
     double dist_parcial;
 
-    // Validação da entrada
     if (argc != 2) {
         fprintf(stderr, "Sintaxe: %s <numero-de-formigas>\n", argv[0]);
         exit(-1);
@@ -22,13 +21,8 @@ int main(int argc, char *argv[]) {
         exit(-1);
     }
 
-    // --- Cálculo Corrigido ---
-    // (double)N é usado para garantir a promoção para float
-    
-    // Dist_total = a * sqrt(1 + n^2)
     dist_total = a * sqrt(1.0 + (double)N * (double)N);
     
-    // Dist_parcial = Dist_total / n
     dist_parcial = dist_total / (double)N; 
 
     printf("Colônia de N=%d formigas (a=%.1f):\n", N, a);
