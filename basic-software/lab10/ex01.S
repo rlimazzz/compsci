@@ -17,19 +17,23 @@ ex01 :
 
     movq  %rsp, %rbp
     
+    #short i = 0
     movb $0, %al
 
     beginfor:
+        # if i < 0
+        # lembrando que comparamos justamente o contrário, então deve ser maior ou igual já que a condição é que o i 
+        # seja menor que 0
         cmpb $4, %al
         jge endfor
         
-        movq $vet, %r8
-        movsbq %al, %r9
-        imulq $2, %r9
-        addq %r8, %r9
-        movw (%r9), %cx
+        movq $vet, %r8 # r8 = &vet, ponteiro para o início do vetor
+        movsbq %al, %r9 # r9 = (long)i a comparação sempre será em 64 bits, sempre fazemos casting para long
+        imulq $2, %r9 # sizeof(short)
+        addq %r8, %r9 # r8 = &vet[i]
+        movw (%r9), %cx # cx = vet[i]
 
-        cmpw max, %cx
+        cmpw max, %cx # comparação entre max e cx para ver quem é o maior
         jle endif
         movw %cx, max
 

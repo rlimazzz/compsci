@@ -68,19 +68,19 @@ aux:
     subl %esi, %edi
     movl %edi, i
 
-    #ui = i    
+    # ui = i    
     movsbl c, %edx
     movl %edx, j
 
-    #ul = ui
+    # ul = ui
     movl ui, %r8d
     movq %r8, ul
 
-    #us = ul
+    # us = ul
     mov ul, %rax
     movw %ax, us
 
-    #c = i + j
+    # c = i + j
     movl i, %eax
     addl j, %eax
     movb %eax, c
